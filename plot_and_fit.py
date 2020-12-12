@@ -1,10 +1,4 @@
-from numpy import cos
-from numpy import sqrt
-from numpy import arange
-from pandas import read_csv
-from scipy.optimize import curve_fit
 from matplotlib import pyplot
-import math
 import numpy as np
 from scipy.integrate import odeint
 
