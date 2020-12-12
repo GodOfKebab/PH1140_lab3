@@ -1,15 +1,6 @@
-# USAGE
-# python opencv_object_tracking.py
-# python opencv_object_tracking.py --video dashcam_boston.mp4 --tracker csrt
-
-# import the necessary packages
-from imutils.video import VideoStream
 from imutils.video import FPS
-import argparse
 import imutils
-import time
 import cv2
-from pprint import pprint as pp
 
 
 OPENCV_OBJECT_TRACKERS = {
@@ -26,7 +17,7 @@ tracker = OPENCV_OBJECT_TRACKERS["csrt"]()
 
 initBB = None
 
-vs = cv2.VideoCapture("127cm_smalltape.mov")
+vs = cv2.VideoCapture("27cm_smalltape.mov")
 
 # initialize the FPS throughput estimator
 fps = None
@@ -36,8 +27,9 @@ chose_object = False
 position_x = list()
 time_t = list()
 t = 0
+
 # loop over frames from the video stream
-while t < 60:
+while t < 60.0:
     frame = vs.read()[1]
 
     # check to see if we have reached the end of the stream
@@ -108,9 +100,7 @@ vs.release()
 # close all windows
 cv2.destroyAllWindows()
 
-
-# positive_amplitude = max(position_x)
-# negative_amplitude = min(position_x)
+# print data collected
 average = sum(position_x) / len(position_x)
 for i in range(len(position_x)):
     position_x[i] -= average
@@ -119,5 +109,5 @@ dividing_factor = max(position_x)/0.2
 for i in range(len(position_x)):
     position_x[i] /= dividing_factor
 
-print("y = ", position_x)
-print("x = ", time_t)
+print("y =", position_x)
+print("x =", time_t)
