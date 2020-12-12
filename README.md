@@ -9,3 +9,15 @@
 - Enter the length of your string and guess the damping factor. Then execute the code.
 - This should open a window and show you the graph of the scattered data points and plot the differential equation that governs the motion of damped oscillations(this doesn't rely on the data you collected but you should try different damping_factor values to get a better fit). 
 - On the output, you will also see a number. This the chi-squared statistic of the data --> chi-square statistic(X^2) is the sum of all the data points' abs(((observed - expected)^2)/expected)
+
+
+## Required packages
+
+### For video analysis:
+* opencv
+* imutils 
+
+### For plotting and graphing a solution:
+* matplotlib
+* numpy
+* scipy <-- for calculating the theta(t) using the ordinary differential eq.
