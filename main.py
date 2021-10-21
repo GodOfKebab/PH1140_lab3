@@ -17,7 +17,7 @@ tracker = OPENCV_OBJECT_TRACKERS["csrt"]()
 
 initBB = None
 
-vs = cv2.VideoCapture("27cm_smalltape.mov")
+vs = cv2.VideoCapture("127cm_bigtape.mov")
 
 # initialize the FPS throughput estimator
 fps = None
